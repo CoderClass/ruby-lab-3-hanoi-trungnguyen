@@ -7,15 +7,15 @@ RSpec.describe Product, type: :model do
     end
 
     it "returns [a] if there is only 1 products" do
-      a = Product.create! name: 'a'
-      expect(Product.alphabetical).to eq [a]
+      adamhat = Product.create! name: "Adam's hat"
+      expect(Product.alphabetical).to eq [adamhat]
     end
     it "should returns [a, b, c] if there are three products" do
-      a = Product.create!(name: 'a')
-      b = Product.create!(name: 'b')
-      c = Product.create!(name: 'c')
+      adamhat = Product.create!(name: "Adams hat")
+      bradhat = Product.create!(name: "Brad's hat")
+      linhat = Product.create!(name: "Lin's hat")
 
-      expect(Product.alphabetical).to eq [a,b,c]
+      expect(Product.alphabetical).to eq [adamhat,bradhat,linhat]
     end
   end
 end
